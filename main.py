@@ -60,10 +60,12 @@ class TKWindow:
 
 
     def delete(self):
-        row = self.tree.selection()[0]
-        self.tree.delete(row)
-        self.file_names.remove(row)
-
+        try:
+            row = self.tree.selection()[0]
+            self.tree.delete(row)
+            self.file_names.remove(row)
+        except IndexError:
+            messagebox.showerror('Error', 'Select item to delete')
 
     def main_loop(self):
         button_choose = Button(self.master, text='Choose file', command=self.choose_file)
