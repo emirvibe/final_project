@@ -67,6 +67,7 @@ class TKWindow:
         except IndexError:
             messagebox.showerror('Error', 'Select item to delete')
 
+
     def main_loop(self):
         button_choose = Button(self.master, text='Choose file', command=self.choose_file)
         button_choose.grid(row=2, column=6)
